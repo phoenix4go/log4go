@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/logtokio.iml" filepath="$PROJECT_DIR$/logtokio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/log4go.iml" filepath="$PROJECT_DIR$/log4go.iml" />
     </modules>
   </component>
 </project>

@@ -5,9 +5,9 @@
  * Para mais detalhes acesse. https://gist.github.com/diegolirio/afd07a9701e28760f0828e82121b57a8
  * 
  */
-package com.phoenix4go.logtokio.logging;
+package com.phoenix4go.log4go.logging;
 
-public interface LoggerTokio {
+public interface Logger4Go {
 
 	static boolean withSlf4j = false;
 	

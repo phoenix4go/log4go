@@ -1,4 +1,4 @@
-package com.phoenix4go.logtokio.jms;
+package com.phoenix4go.log4go.jms;
 
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;

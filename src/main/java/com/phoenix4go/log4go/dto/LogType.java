@@ -1,4 +1,4 @@
-package com.phoenix4go.logtokio.dto;
+package com.phoenix4go.log4go.dto;
 
 public enum LogType {
 

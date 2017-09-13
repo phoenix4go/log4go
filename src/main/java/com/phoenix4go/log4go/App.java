@@ -1,7 +1,7 @@
-package com.phoenix4go.logtokio;
+package com.phoenix4go.log4go;
 
-import com.phoenix4go.logtokio.logging.LoggerTokio;
-import com.phoenix4go.logtokio.logging.LoggerTokioFactory;
+import com.phoenix4go.log4go.logging.Logger4Go;
+import com.phoenix4go.log4go.logging.Logger4GoFactory;
 
 /**
  * @diegoLirio App!
@@ -9,7 +9,7 @@ import com.phoenix4go.logtokio.logging.LoggerTokioFactory;
  */
 public class App {
 
-	private static LoggerTokio logger = LoggerTokioFactory.getLogger(App.class, "logtokio", "lib");
+	private static Logger4Go logger = Logger4GoFactory.getLogger(App.class, "log4go", "lib");
 
 	App() {
 		logger.info("Hello World!");

@@ -4,7 +4,7 @@
  * Este programa é uma api de log, utilizando JMS para envio das informações.
  * 
  */
-package com.phoenix4go.logtokio.logging;
+package com.phoenix4go.log4go.logging;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,12 +14,12 @@ import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.phoenix4go.logtokio.dto.Log;
-import com.phoenix4go.logtokio.dto.LogType;
-import com.phoenix4go.logtokio.jms.SenderLog;
-import com.phoenix4go.logtokio.jms.SenderLogFactory;
+import com.phoenix4go.log4go.dto.Log;
+import com.phoenix4go.log4go.dto.LogType;
+import com.phoenix4go.log4go.jms.SenderLog;
+import com.phoenix4go.log4go.jms.SenderLogFactory;
 
-class LoggerTokioImpl implements LoggerTokio {
+class Logger4GoImpl implements Logger4Go {
 	
 	private String divisao;
 	private String sistema;
@@ -29,18 +29,18 @@ class LoggerTokioImpl implements LoggerTokio {
 	private static SenderLog senderLog;
 	private static ObjectMapper objectMapper;
 	
-	LoggerTokioImpl(Class<?> clazz, String sistema, String divisao) {
+	Logger4GoImpl(Class<?> clazz, String sistema, String divisao) {
 		this.sistema = sistema;
 		this.divisao = divisao;
 		this.clazz = clazz;
 	}
 
-	public static LoggerTokioImpl createInstance(Class<?> clazz, String sistema, String divisao) throws InstantiationException, IllegalAccessException {
+	public static Logger4GoImpl createInstance(Class<?> clazz, String sistema, String divisao) throws InstantiationException, IllegalAccessException {
 		if(withSlf4j) 
 			log4j = LoggerFactory.getLogger(clazz);
 		setupObjectMapper();		
 		senderLog = SenderLogFactory.getSenderLog();
-		LoggerTokioImpl loggerTokioImpl = new LoggerTokioImpl(clazz, sistema, divisao);
+		Logger4GoImpl loggerTokioImpl = new Logger4GoImpl(clazz, sistema, divisao);
 		return loggerTokioImpl;
 	}
 	
