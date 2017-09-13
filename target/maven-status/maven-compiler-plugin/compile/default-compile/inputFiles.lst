@@ -1,0 +1,9 @@
+/home/diego/workspace/java/Logtokio-Project-P4Go/logtokio/src/main/java/com/phoenix4go/logtokio/jms/SenderLogFactory.java
+/home/diego/workspace/java/Logtokio-Project-P4Go/logtokio/src/main/java/com/phoenix4go/logtokio/logging/LoggerTokioImpl.java
+/home/diego/workspace/java/Logtokio-Project-P4Go/logtokio/src/main/java/com/phoenix4go/logtokio/dto/Log.java
+/home/diego/workspace/java/Logtokio-Project-P4Go/logtokio/src/main/java/com/phoenix4go/logtokio/logging/LoggerTokio.java
+/home/diego/workspace/java/Logtokio-Project-P4Go/logtokio/src/main/java/com/phoenix4go/logtokio/App.java
+/home/diego/workspace/java/Logtokio-Project-P4Go/logtokio/src/main/java/com/phoenix4go/logtokio/jms/SenderLog.java
+/home/diego/workspace/java/Logtokio-Project-P4Go/logtokio/src/main/java/com/phoenix4go/logtokio/dto/LogType.java
+/home/diego/workspace/java/Logtokio-Project-P4Go/logtokio/src/main/java/com/phoenix4go/logtokio/logging/LoggerTokioFactory.java
+/home/diego/workspace/java/Logtokio-Project-P4Go/logtokio/src/main/java/com/phoenix4go/logtokio/jms/SenderLogDelegate.java
