@@ -1,4 +1,4 @@
-# Logtokio Project
+# Log4Go Project
 
 Centralize logging via JMS
 
@@ -6,16 +6,16 @@ Centralize logging via JMS
 [Artifactory](http://srvcem002a/artifactory/webapp/search/artifact?24&q=logtokio)
 ```xml
 <dependency>
-	<groupId>br.com.tokiomarine</groupId>
-	<artifactId>logtokio</artifactId>
+	<groupId>com.phoenix4go</groupId>
+	<artifactId>log4go</artifactId>
 	<version>X.X.X-SNAPSHOT</version>
 </dependency>
 ```		
 
 ### Quick Start
 ```java
-static LoggerTokio logger = LoggerTokioFactory.getLogger(MyClass.class, "application", "section");
-logger.info("Quick Start Logtokio...!"); // simple
+static Logger4go logger = Logger4goFactory.getLogger(MyClass.class, "application", "section");
+logger.info("Quick Start Log4go...!"); // simple
 logger.info("<field-one>My Document</field-one>", "Quick Start Logtokio...!"); // with document
 ```
 ### System Properties
