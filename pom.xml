@@ -5,7 +5,7 @@
 
 	<groupId>com.phoenix4go</groupId>
 	<artifactId>log4go</artifactId>
-	<version>0.0.9-DEV20170923.3</version>
+	<version>0.0.9-DEV20170923.5</version>
 	<packaging>jar</packaging>
 
 	<name>log4go</name>
@@ -18,11 +18,11 @@
 	</properties>
 
 	<dependencies>
-
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- slf4j -->

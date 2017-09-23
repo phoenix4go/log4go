@@ -7,7 +7,7 @@
 package com.phoenix4go.log4go.logging;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +36,7 @@ class Logger4GoImpl implements Logger4Go {
 	}
 
 	public static Logger4GoImpl createInstance(Class<?> clazz, String sistema, String divisao) throws InstantiationException, IllegalAccessException {
-		if(withSlf4j) 
+		if(withSlf4j)
 			log4j = LoggerFactory.getLogger(clazz);
 		setupObjectMapper();		
 		senderLog = SenderLogFactory.getSenderLog();
@@ -50,49 +50,49 @@ class Logger4GoImpl implements Logger4Go {
 	}
 
 	public void info(String message) {
-		if(withSlf4j) 
+		if(withSlf4j)
 			log4j.info(message); // TODO: refatorar para 1 lugar soh...
 		this.send(LogType.INFO, null, message);
 	}
 	
 	public void info(String document, String message) {
-		if(withSlf4j) 
+		if(withSlf4j)
 			log4j.info(message);
 		this.send(LogType.INFO, document, message);
 	}	
 
 	public void info(String format, Object... args) {
-		if(withSlf4j) 
+		if(withSlf4j)
 			log4j.info(String.format(format, args));
 		this.send(LogType.INFO, null, String.format(format, args));
 	}
 
 	public void info(String document, String format, Object... args) {
-		if(withSlf4j) 
+		if(withSlf4j)
 			log4j.info(String.format(format, args));
 		this.send(LogType.INFO, document, String.format(format, args));
 	}	
 	
 	public void error(String message) {
-		if(withSlf4j) 
+		if(withSlf4j)
 			log4j.error(message);
 		this.send(LogType.ERROR, null, message);
 	}
 	
 	public void error(String document, String message) {
-		if(withSlf4j) 
+		if(withSlf4j)
 			log4j.error(message);
 		this.send(LogType.ERROR, document, message);
 	}	
 
 	public void error(String format, Object... args) {
-		if(withSlf4j) 
+		if(withSlf4j)
 			log4j.error(format, args);
 		this.send(LogType.ERROR, null, String.format(format, args));
 	}
 
 	public void error(String document, String format, Object... args) {
-		if(withSlf4j) 
+		if(withSlf4j)
 			log4j.error(format, args);
 		this.send(LogType.ERROR, document, String.format(format, args));
 	}	
@@ -148,7 +148,7 @@ class Logger4GoImpl implements Logger4Go {
 	private void sendLogger(LogType logType, String log, String document, String sistema, String divisao) {
 		try {
 			Log logObj = Log.builder()
-							   .dataHora(Calendar.getInstance())
+							   .dataHora(new Date())
 							   .logType(logType)
 							   .log(log)
 							   .sistema(sistema)

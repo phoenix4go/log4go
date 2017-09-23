@@ -9,7 +9,7 @@ package com.phoenix4go.log4go.logging;
 
 public interface Logger4Go {
 
-	static boolean withSlf4j = false;
+	boolean withSlf4j = false;
 	
 	void info(java.lang.String message);
 	

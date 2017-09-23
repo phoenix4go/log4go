@@ -1,38 +1,24 @@
 package br.com.tokiomarine.logtokio;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import com.phoenix4go.log4go.logging.Logger4Go;
+import com.phoenix4go.log4go.logging.Logger4GoFactory;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+public class AppTest {
+
+    private static Logger4Go logger;
+
+    @BeforeClass
+    public static void beforeClass() {
+        logger = Logger4GoFactory.getLogger(AppTest.class, "log4go", "lib");
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    @Test
+    public void testLogger() {
+        logger.info("Hello");
+        Assert.assertTrue(true);
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }
