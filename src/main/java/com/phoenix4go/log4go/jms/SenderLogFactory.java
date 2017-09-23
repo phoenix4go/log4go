@@ -6,20 +6,14 @@ import java.util.Properties;
 
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
-import javax.jms.Queue;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.util.StringUtils;
 
 public class SenderLogFactory {
 
-	private String brokerLogURL;// = System.getProperty("ACTIVEMQ_URL_LOG__"); //"failover:(tcp://srvjava003d:61616)?randomize=false"; //System.getProperty("ACTIVEMQ_URL_LOG");  | srvjava003d | localhost
-	//private static String brokerMainURL = System.getProperty("ACTIVEMQ_URL");
-	private String user;// = System.getProperty("ACTIVE_MQ_USER");
-	private String password;// = System.getProperty("ACTIVE_MQ_PASSWORD");
-	private String queueName;// = System.getProperty("ACTIVEMQ_QUEUE_LOG"); //"TOKIO.Q.LOG.PUT"; //System.getProperty("ACTIVEMQ_QUEUE_LOG");
+	private String brokerLogURL, user, password, queueName;
 
 	SenderLogFactory(){
 		this.loadProperties();

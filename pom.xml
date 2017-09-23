@@ -6,7 +6,7 @@
 	<groupId>com.phoenix4go</groupId>
 	<artifactId>log4go</artifactId>
 	<version>0.0.9-DEV20170923.3</version>
-	<packaging>jar</packaging>cd
+	<packaging>jar</packaging>
 
 	<name>log4go</name>
 	<url>http://maven.apache.org</url>
