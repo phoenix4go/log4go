@@ -5,7 +5,7 @@
 
 	<groupId>com.phoenix4go</groupId>
 	<artifactId>log4go</artifactId>
-	<version>0.0.7-SNAPSHOT</version>
+	<version>0.0.8-DEV20170922.1</version>
 	<packaging>jar</packaging>
 
 	<name>log4go</name>
@@ -64,8 +64,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.2</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>
