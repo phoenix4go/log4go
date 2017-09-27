@@ -27,11 +27,11 @@ public class PropertiesLog4Go {
         try {
             input = getClass().getClassLoader().getResourceAsStream(fileName);
             if(input == null)
-                throw new RuntimeException("log4go.properties not found!");
+                throw new RuntimeException(String.format("%s file not found!",fileName));
             prop.load(input);
             this.brokerLogURL = prop.getProperty("log4go.activemq.broker-url");
             if(this.brokerLogURL == null)
-                throw new RuntimeException("BrokerURL not found...!");
+                throw new RuntimeException("BrokerURL not found! Add to property log4go.activemq.broker-url");
             this.user = prop.getProperty("log4go.activemq.user");
             this.password = prop.getProperty("log4go.activemq.password");
             this.queueName = prop.getProperty("log4go.activemq.queue-name");
