@@ -38,5 +38,8 @@ logger.info("Quick Start Logtokio... %s - %s", "arguments-1", "arguments-2");
 logger.info("<field-one>My Document</field-one>", "Quick Start Logtokio... %s - %s", "arguments-1", "arguments-2");
 ```
 
+### Overview
+![Logtokio Image](https://raw.githubusercontent.com/diegolirio/diegolirio/master/images/logtokio-image.png)
+
 [Participe do desenvolvimento](https://trello.com/b/1wS1FI0u/logtokio-project)
 
