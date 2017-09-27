@@ -7,16 +7,19 @@ import java.util.Properties;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 
+import com.phoenix4go.log4go.properties.PropertiesLog4Go;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.jms.core.JmsTemplate;
 
 public class SenderLogFactory {
 
-	private String brokerLogURL, user, password, queueName;
+	private PropertiesLog4Go propertiesLog4Go;
 
 	SenderLogFactory(){
-		this.loadProperties();
+		propertiesLog4Go = PropertiesLog4Go.builder()
+										   .loadProperties("log4go.properties")
+										   .build();
 	}
 
 	public static SenderLog getSenderLog() {
@@ -25,42 +28,15 @@ public class SenderLogFactory {
 		jmsTemplate.setDefaultDestination(senderLogFactory.destination());
 		return SenderLogDelegate.createInstance(jmsTemplate);
 	}
-	
+
 	private ConnectionFactory connectionFactory() {
-		return new ActiveMQConnectionFactory(this.user, this.password,  this.brokerLogURL);
+		return new ActiveMQConnectionFactory(propertiesLog4Go.getUser(),
+											 propertiesLog4Go.getPassword(),
+											 propertiesLog4Go.getBrokerLogURL());
 	}
 	
 	private Destination destination() {
-		return new ActiveMQQueue(this.queueName);
-	}
-
-	private void loadProperties() {
-		Properties prop = new Properties();
-		InputStream input = null;
-		try {
-			String log4goFile = "log4go.properties";
-			input = getClass().getClassLoader().getResourceAsStream(log4goFile);
-			if(input == null)
-				throw new RuntimeException("log4go.properties not found!");
-			prop.load(input);
-			this.brokerLogURL = prop.getProperty("log4go.activemq.broker-url");
-			if(this.brokerLogURL == null)
-				throw new RuntimeException("BrokerURL not found...!");
-			this.user = prop.getProperty("log4go.activemq.user");
-			this.password = prop.getProperty("log4go.activemq.password");
-			this.queueName = prop.getProperty("log4go.activemq.queue-name");
-			if(this.queueName == null) this.queueName = "LOG4GO.Q.LOG";
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		} finally {
-			if(input != null)
-				try {
-					input.close();
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-				}
-		}
-
+		return new ActiveMQQueue(propertiesLog4Go.getQueueName());
 	}
 
 }
