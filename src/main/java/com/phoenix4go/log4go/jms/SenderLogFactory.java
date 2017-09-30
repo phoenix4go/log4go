@@ -1,24 +1,20 @@
 package com.phoenix4go.log4go.jms;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 
-import com.phoenix4go.log4go.properties.PropertiesLog4Go;
+import com.phoenix4go.log4go.properties.ApplicationProperties;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.jms.core.JmsTemplate;
 
 public class SenderLogFactory {
 
-	private PropertiesLog4Go propertiesLog4Go;
+	private ApplicationProperties applicationProperties;
 
 	SenderLogFactory(){
-		propertiesLog4Go = PropertiesLog4Go.builder()
-										   .loadProperties("log4go.properties")
+		applicationProperties = ApplicationProperties.builder()
+										   .loadProperties()
 										   .build();
 	}
 
@@ -30,13 +26,13 @@ public class SenderLogFactory {
 	}
 
 	private ConnectionFactory connectionFactory() {
-		return new ActiveMQConnectionFactory(propertiesLog4Go.getUser(),
-											 propertiesLog4Go.getPassword(),
-											 propertiesLog4Go.getBrokerLogURL());
+		return new ActiveMQConnectionFactory(applicationProperties.getUser(),
+											 applicationProperties.getPassword(),
+											 applicationProperties.getBrokerURL());
 	}
 	
 	private Destination destination() {
-		return new ActiveMQQueue(propertiesLog4Go.getQueueName());
+		return new ActiveMQQueue(applicationProperties.getQueueName());
 	}
 
 }

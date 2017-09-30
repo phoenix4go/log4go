@@ -9,15 +9,18 @@ import org.junit.Test;
 public class AppTest {
 
     private static Logger4Go logger;
+    private static Logger4Go loggerOther;
 
     @BeforeClass
     public static void beforeClass() {
         logger = Logger4GoFactory.getLogger(AppTest.class, "log4go", "lib");
+        loggerOther = Logger4GoFactory.getLogger(AppTest.class, "log4go", "lib");
     }
 
     @Test
     public void testLogger() {
         logger.info("Hello");
+        loggerOther.warn("Warn");
         Assert.assertTrue(true);
     }
 
