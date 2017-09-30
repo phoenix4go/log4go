@@ -10,8 +10,9 @@ Centralize logging via JMS
 	<artifactId>log4go</artifactId>
 	<version>X.X.X-SNAPSHOT</version>
 </dependency>
-```	
-### Create `application.properties` in `src/main/resources` folder 
+```
+
+### Create the `application.properties` file in `src/main/resources` folder 
 ```
 log4go.activemq.broker-url=failover:(tcp://localhost:61616)?randomize=false
 log4go.activemq.user=my_user
